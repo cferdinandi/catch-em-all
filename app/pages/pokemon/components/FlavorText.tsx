@@ -32,8 +32,10 @@ export function FlavorText ({ entries }: { entries: Array<any> | null; }) {
 		return null;
 	}
 
+	// data-testid for e2e testing
+	// https://playwright.dev/docs/locators#locate-by-test-id
 	return (
-		<p>
+		<p data-testid="flavor-text">
 			{flavor_text}
 		</p>
 	)

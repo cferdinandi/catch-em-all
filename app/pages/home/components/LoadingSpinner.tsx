@@ -45,7 +45,10 @@ export function LoadingSpinner ({
 
 	return (
 		<div data-is-loading={isLoading}>
-			<div className={styles.ring}>
+			<div
+				className={styles.ring}
+				data-loading-ring
+			>
 				<div />
 				<div />
 				<div />
