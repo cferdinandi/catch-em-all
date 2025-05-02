@@ -52,7 +52,10 @@ export function Abilities ({ abilities }: { abilities: Array<any> | null; }) {
 	}
 
 	return (
-		<div className="margin-bottom-xxlarge">
+		<div
+			className="margin-bottom-xxlarge"
+			data-testid="abilities"
+		>
 			<h2 className="h3">Abilities</h2>
 			<dl>
 			{abilities.map((item) => {

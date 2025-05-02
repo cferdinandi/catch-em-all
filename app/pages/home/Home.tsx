@@ -1,9 +1,9 @@
 import { useCallPaginatedAPI } from '~/api/queries';
 import { pokemonURL } from '~/api/endpoints';
 
-import { PokemonCard } from './components/PokemonCard';
+import { PokemonCard } from './components/PokemonCard/PokemonCard';
 import { PlaceHolderGrid } from './components/PlaceholderGrid';
-import { LoadingSpinner } from './components/LoadingSpinner';
+import { LoadingSpinner } from './components/LoadingSpinner/LoadingSpinner';
 
 export function Home () {
 

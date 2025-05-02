@@ -1,7 +1,7 @@
 import { useCallAPI } from '~/api/queries';
 import { pokemonURL } from '~/api/endpoints';
 
-import { PlaceholderCard } from './PlaceholderCard';
+import { PlaceholderCard } from '../PlaceholderCard';
 import { PokemonSprite } from '~/components/PokemonSprite';
 import { Link } from 'react-router';
 
@@ -28,7 +28,10 @@ export function PokemonCard ({ name }: { name: string; }) {
 	}
 
 	return (
-		<div className={styles.card}>
+		<div
+			className={styles.card}
+			data-testid="card"
+		>
 			<Link
 				className={styles['card-link']}
 				to={`/pokemon/${name}`}

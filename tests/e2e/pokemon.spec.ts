@@ -15,9 +15,22 @@ test.describe('Individual Pokemon page', () => {
 		// Shows flavor text
 		await expect(page.getByTestId('flavor-text')).not.toBeEmpty();
 
-		// Shows Type and Habitat sections
-		await expect(page.locator('h2').filter({ hasText: 'Types' })).toBeVisible();
-		await expect(page.locator('h2').filter({ hasText: 'Habitat' })).toBeVisible();
+		// Shows Type section
+		const typeSection = page.getByTestId('types');
+		await expect(typeSection.locator('h2')).toBeVisible();
+		await expect(typeSection.locator('ul')).toBeVisible();
+
+		// Shows Habitat section
+		const habitatSection = page.getByTestId('habitat');
+		await expect(habitatSection.locator('h2')).toBeVisible();
+		await expect(habitatSection.locator('span')).toBeVisible();
+
+		// Shows Abilities section
+		const abilitySection = page.getByTestId('abilities');
+		await expect(abilitySection.locator('h2')).toBeVisible();
+		await expect(abilitySection.locator('dl')).toBeVisible();
+		expect(await abilitySection.locator('dt').count()).toBeGreaterThanOrEqual(1);
+		expect(await abilitySection.locator('dd').count()).toBeGreaterThanOrEqual(1);
 
 	});
 

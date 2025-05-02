@@ -35,7 +35,7 @@ export function Habitat ({ habitat }: { habitat: any | null; }) {
 	}
 
 	return (
-		<div>
+		<div data-testid="habitat">
 			<h2 className="h3 margin-bottom-small">Habitat</h2>
 			<span className="text-title-case">{dashToSpace(habitat.name)}</span>
 		</div>

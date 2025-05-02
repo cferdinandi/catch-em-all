@@ -37,7 +37,7 @@ export function ButtonCopy ({ name }: { name: string; }) {
 	}
 
 	return (
-		<>
+		<span data-testid="copy">
 			<button
 				className="btn-neutral btn-block btn-small"
 				onClick={(event) => {
@@ -53,7 +53,7 @@ export function ButtonCopy ({ name }: { name: string; }) {
 				className="visually-hidden"
 				role="status"
 			>{a11yLabel}</div>
-		</>
+		</span>
 	);
 
 }

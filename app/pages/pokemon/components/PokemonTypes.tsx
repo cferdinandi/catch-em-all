@@ -37,7 +37,7 @@ export function PokemonTypes ({ types }: { types: Array<any> | null; }) {
 	}
 
 	return (
-		<div>
+		<div data-testid="types">
 			<h2 className="h3 margin-bottom-small">Types</h2>
 			<ul className="list-inline">
 				{types.map((typeData) => {

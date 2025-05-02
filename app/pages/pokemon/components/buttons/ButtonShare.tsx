@@ -45,7 +45,7 @@ export function ButtonShare ({ name }: { name: string; }) {
 	}
 
 	return (
-		<>
+		<span data-testid="share">
 			<button
 				className="btn-neutral btn-block btn-small"
 				onClick={(event) => {
@@ -65,7 +65,7 @@ export function ButtonShare ({ name }: { name: string; }) {
 				className="visually-hidden"
 				role="status"
 			>{a11yLabel}</div>
-		</>
+		</span>
 	);
 
 }

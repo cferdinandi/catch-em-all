@@ -9,6 +9,8 @@
 - `npm run test:unit` - run unit tests
 - `npm run test:all` - run all tests
 
+_**Note:** occasionally, one of the tests will fail in one of the test browsers because the API takes too long to respond. Rerunning the affected test usually resolves the issue._
+
 
 ## Tool Choice
 
@@ -39,6 +41,7 @@ There are a few principles that guide how I approached testing with this project
 An accessibility test was also conducted on this app. This included...
 
 - Google Lighthouse automated testing
+- E2E with Playwright test to ensure focus is shifted properly on page navigation
 - Manually checking colors using the [Color Oracle color blindness simulator](https://colororacle.org).
 - Manually navigating the site with a keyboard.
 - Manually testing with a screen reader.
