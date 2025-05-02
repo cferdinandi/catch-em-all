@@ -1,0 +1,211 @@
+/**
+ * @section Typography
+ * Default typographic styles (text, headings, lists, etc.)
+ */
+
+html {
+	font-size: var(--font-size-base);
+}
+
+body {
+	background: var(--color-background);
+	color: var(--color-text);
+	font-family: var(--font-primary);
+	line-height: var(--line-height-m);
+}
+
+p {
+	margin: 0 0 var(--space-xl);
+}
+
+
+/**
+ * Hyperlink styling
+ */
+
+a {
+	--color: var(--color-link);
+	--decoration: underline dotted;
+	color: var(--color);
+	word-wrap: break-word;
+	text-decoration: var(--decoration);
+}
+
+a:hover {
+	--color: var(--color-link-hover);
+	--decoration: underline;
+}
+
+.link-no-underline {
+	--decoration: none;
+}
+
+.link-no-underline:hover {
+	--decoration: underline;
+}
+
+
+/**
+ * List styling
+ */
+
+ul,
+ol {
+	margin: 0 0 var(--space-xl) var(--space-xxl);
+	padding: 0;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+	margin-bottom: 0;
+}
+
+li {
+	margin-bottom: var(--space-xxs);
+}
+
+.list-spaced li {
+	margin-bottom: var(--space-m);
+}
+
+.list-spaced-small li {
+	margin-bottom: var(--space-s);
+}
+
+dl,
+dd {
+	margin: 0;
+	padding: 0;
+}
+
+dd {
+	margin-bottom: var(--space-xl);
+}
+
+dt {
+	font-weight: bold;
+}
+
+/**
+ * Removes list styling
+ * For semantic reasons, should only be used on unordered lists.
+ * @link https://matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics
+ */
+.list-unstyled,
+.list-inline {
+	list-style-type: "";
+	margin-left: 0;
+}
+
+/**
+ * Display lists on a single line.
+ */
+
+.list-inline {
+	display: flex;
+	align-items: center;
+	column-gap: var(--space-m);
+	flex-wrap: wrap;
+}
+
+@media (max-width: 38rem) {
+	.list-inline-responsive li {
+		min-width: 100%;
+	}
+
+	.list-inline-responsive .list-item-inline {
+		min-width: auto;
+	}
+}
+
+.list-inline-spaced {
+	column-gap: var(--space-xxl);
+}
+
+.list-inline-compact {
+	column-gap: var(--space-xs);
+}
+
+.list-inline-center {
+	justify-content: center;
+}
+
+
+/**
+ * Heading styling for h1 through h6 elements.
+ * Heading class lets you use one heading type for semantics, but style it as another heading type.
+ */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-secondary);
+	margin: 0 0 var(--space-m);
+	padding: 0;
+	line-height: var(--line-height-s);
+	text-wrap: pretty;
+	word-wrap: break-word;
+}
+
+h1,
+.h1 {
+	font-size: var(--font-size-xxl);
+	padding-top: var(--space-xs);
+}
+
+h2,
+.h2 {
+	font-size: var(--font-size-xl);
+	padding-top: var(--space-l);
+}
+
+h3,
+.h3 {
+	font-size: var(--font-size-l);
+}
+
+h4, h5, h6,
+.h4, .h5, .h6 {
+	font-size: var(--font-size-m);
+}
+
+
+/**
+ * Lines
+ */
+hr {
+	border: 0;
+	border-top: 1px solid var(--color-neutral-light);
+	margin: var(--space-xxl) auto;
+}
+
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+	background: var(--color-highlight);
+	color: var(--color-text);
+}
+
+
+/**
+ * Blockquotes
+ */
+
+blockquote {
+	border-left: var(--space-xxs) solid var(--color-neutral);
+	margin: 0 0 var(--space-m);
+	padding: var(--space-xs) var(--space-m);
+}
+
+blockquote pre {
+	font-style: normal;
+}
+
+cite {
+	color: var(--color-text-muted);
+	display: block;
+	font-size: var(--font-size-s);
+	margin-top: var(--space-m);
+}

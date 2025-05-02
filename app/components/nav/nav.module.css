@@ -1,0 +1,29 @@
+.wrapper {
+	background-color: var(--color-black);
+	margin-bottom: var(--space-l);
+}
+
+.logo {
+	height: 2rem;
+	width: 2rem;
+}
+
+.link {
+	--decoration: none;
+
+	color: var(--color-white);
+	font-family: var(--font-secondary);
+	font-size: var(--font-size-xl);
+	font-weight: bold;
+	padding: var(--space-s) var(--space-m);
+
+	display: inline-flex;
+	gap: var(--space-s);
+	justify-content: center;
+	align-items: center;
+}
+
+.link:hover {
+	--decoration: none;
+	color: var(--color-red-80);
+}

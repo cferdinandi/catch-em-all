@@ -1,0 +1,12 @@
+.main {
+	margin-bottom: var(--space-xxxl);
+}
+
+@media (min-width: 38rem) {
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr 4fr;
+		gap: var(--space-l);
+		margin-bottom: var(--space-xxl);
+	}
+}

@@ -1,0 +1,47 @@
+/**
+ * @section Color Palette
+ * Adapted from https://webawesome.com
+ * These are used in theme.css to set semantic color variable values
+ */
+:root {
+
+	--color-red-95: #fff0ef;
+	--color-red-90: #ffdedc;
+	--color-red-80: #ffb8b6;
+	--color-red-70: #fd8f90;
+	--color-red-60: #f3676c;
+	--color-red-50: #dc3146;
+	--color-red-40: #b30532;
+	--color-red-30: #8a132c;
+	--color-red-20: #631323;
+	--color-red-10: #3e0913;
+	--color-red-05: #2a040b;
+
+	--color-blue-95: #e8f3ff;
+	--color-blue-90: #d1e8ff;
+	--color-blue-80: #9fceff;
+	--color-blue-70: #6eb3ff;
+	--color-blue-60: #3e96ff;
+	--color-blue-50: #0071ec;
+	--color-blue-40: #0053c0;
+	--color-blue-30: #003f9c;
+	--color-blue-20: #002d77;
+	--color-blue-10: #001a4e;
+	--color-blue-05: #000f35;
+
+	--color-gray-95: #f1f2f3;
+	--color-gray-90: #e4e5e9;
+	--color-gray-80: #c7c9d0;
+	--color-gray-70: #abaeb9;
+	--color-gray-60: #9194a2;
+	--color-gray-50: #717584;
+	--color-gray-40: #545868;
+	--color-gray-30: #424554;
+	--color-gray-20: #2f323f;
+	--color-gray-10: #1b1d26;
+	--color-gray-05: #101219;
+
+	--color-white: #ffffff;
+	--color-black: var(--color-gray-05);
+
+}

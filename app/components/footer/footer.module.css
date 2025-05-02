@@ -1,0 +1,34 @@
+.wrapper {
+	background-color: var(--color-neutral-lightest);
+	margin-top: var(--space-xl);
+	padding: var(--space-m) 0;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.nav a {
+	--color: var(--color-blue-40);
+}
+
+.nav a:hover {
+	--color: var(--color-blue-30);
+}
+
+.link {
+	--decoration: none;
+
+	font-family: var(--font-secondary);
+	font-weight: bold;
+
+	display: flex;
+	gap: var(--space-xs);
+	align-items: center;
+}
+
+.link:hover {
+	--decoration: none;
+}

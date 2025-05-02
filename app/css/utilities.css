@@ -1,0 +1,90 @@
+/**
+ * @section Utilities
+ * Single-purpose classes for override default styles
+ */
+
+/**
+ * Margins
+ */
+.no-margin-bottom {
+	margin-bottom: 0;
+}
+
+.margin-bottom-small {
+	margin-bottom: var(--space-xs);
+}
+
+.margin-bottom {
+	margin-bottom: var(--space-m);
+}
+
+.margin-bottom-large {
+	margin-bottom: var(--space-l);
+}
+
+.margin-bottom-xlarge {
+	margin-bottom: var(--space-xl);
+}
+
+.margin-bottom-xxlarge {
+	margin-bottom: var(--space-xxl);
+}
+
+.margin-bottom-xxxlarge {
+	margin-bottom: var(--space-xxxl);
+}
+
+
+/**
+ * Padding
+ */
+.no-padding-top {
+	padding-top: 0;
+}
+
+.padding-top-small {
+	padding-top: var(--space-xs);
+}
+
+.padding-top {
+	padding-top: var(--space-m);
+}
+
+.padding-top-large {
+	padding-top: var(--space-l);
+}
+
+.padding-top-xlarge {
+	padding-top: var(--space-xl);
+}
+
+
+/**
+ * Text
+ */
+
+.text-title-case {
+	text-transform: capitalize;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.font-primary {
+	font-family: var(--font-primary);
+}
+
+.font-secondary {
+	font-family: var(--font-secondary);
+}
+
+
+
+/**
+ * Images
+ */
+
+.img-full-width {
+	width: 100%;
+}

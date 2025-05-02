@@ -1,0 +1,140 @@
+/**
+ * @section Buttons
+ * Applies styles to all <button> elements by default
+ * Includes utility classes for modifying default styles
+ * Can also be used to style links to look like buttons
+ */
+
+
+/**
+ * Primary buttons
+ */
+
+button,
+.btn {
+	--background-color: var(--color-primary);
+	--border-color: var(--color-primary);
+	--border-size: 1px;
+	--color: var(--color-white);
+	--border-radius: var(--border-radius-s);
+	--font-size: var(--font-size-s);
+	--font-weight: 500;
+	--padding: var(--space-xs) var(--space-s);
+	--line-height: var(--line-height-xs);
+
+	background-color: var(--background-color);
+	border: var(--border-size) solid var(--border-color);
+	border-radius: var(--border-radius);
+	color: var(--color);
+	display: inline-block;
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
+	line-height: var(--line-height);
+	margin-right: var(--space-xxs);
+	margin-bottom: var(--space-xxs);
+	padding: var(--padding);
+}
+
+button:hover,
+.btn:hover {
+	--background-color: var(--color-primary-hover);
+	--border-color: var(--color-primary-hover);
+	--color: var(--color-white);
+}
+
+button:active,
+.btn:active {
+	--background-color: var(--color-primary-active);
+	--border-color: var(--color-primary-active);
+}
+
+a.btn {
+	text-decoration: none;
+}
+
+
+/**
+ * Neutral buttons
+ */
+.btn-neutral {
+	--background-color: var(--color-neutral-lighter);
+	--border-color: var(--color-neutral-lighter);
+	--color: var(--color-neutral-10);
+}
+
+.btn-neutral:hover {
+	--background-color: var(--color-neutral-hover);
+	--border-color: var(--color-neutral-hover);
+	--color: var(--color-neutral-10);
+}
+
+.btn-neutral[aria-pressed="true"],
+.btn-neutral:active {
+	--background-color: var(--color-neutral-active);
+	--border-color: var(--color-neutral-active);
+}
+
+
+/**
+ * Disabled state
+ */
+
+button[disabled],
+button[data-is-loading="true"] {
+	box-shadow: none;
+	cursor: not-allowed;
+	opacity: 0.7;
+	pointer-events: none;
+}
+
+
+/**
+ * Button size
+ */
+
+.btn-large {
+	--font-size: var(--font-size-l);
+	--padding: var(--space-m) var(--space-l);
+}
+
+.btn-small {
+	--font-size: var(--font-size-xs);
+	--padding: var(--space-xs) var(--space-s);
+}
+
+
+
+/**
+ * Block-level buttons
+ */
+
+.btn-block {
+	display: block;
+	margin-right: 0;
+	width: 100%;
+}
+
+
+/**
+ * General styles
+ */
+
+button,
+.btn,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+/**
+ * Remove right margin on last element and inputs
+ */
+button:last-child,
+.btn:last-child,
+input.btn {
+	margin-right: 0;
+}

@@ -1,0 +1,33 @@
+/**
+ * @section Layout
+ * Used to control the overall page width and height
+ */
+
+/**
+ * Base grid styles: single column
+ */
+.container {
+	--width: 38rem;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--width);
+	width: 88%;
+}
+
+.container-medium {
+	--width: 52rem;
+}
+
+.container-large {
+	--width: 60rem;
+}
+
+.container-xlarge {
+	--width: 80rem;
+}
+
+
+main {
+	min-height: 80vh;
+	padding-bottom: var(--space-l);
+}

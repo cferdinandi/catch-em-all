@@ -1,0 +1,119 @@
+/**
+ * @section Grid
+ * A reusable CSS grid based on simple fractions
+ */
+
+@media (min-width: 38rem) {
+
+	.row {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: 1fr;
+		gap: var(--space-s);
+	}
+
+	.grid-sixth {
+		grid-column: auto / span 2;
+	}
+
+	.grid-fourth {
+		grid-column: auto / span 3;
+	}
+
+	.grid-third {
+		grid-column: auto / span 4;
+	}
+
+	.grid-two-thirds {
+		grid-column: auto / span 8;
+	}
+
+	.grid-half {
+		grid-column: auto / span 6;
+	}
+
+	.grid-three-fourths {
+		grid-column: auto / span 9;
+	}
+
+	.grid-five-sixths {
+		grid-column: auto / span 10;
+	}
+
+	[class*="grid-start-"] {
+		grid-row-start: 1;
+	}
+
+	.grid-start-first {
+		grid-column-start: 1;
+	}
+
+	.grid-start-sixth {
+		grid-column-start: 3;
+	}
+
+	.grid-start-fourth {
+		grid-column-start: 4;
+	}
+
+	.grid-start-third {
+		grid-column-start: 5;
+	}
+
+	.grid-start-half {
+		grid-column-start: 7;
+	}
+
+	.grid-start-two-thirds {
+		grid-column-start: 9;
+	}
+
+	.grid-start-three-fourths {
+		grid-column-start: 10;
+	}
+
+	.grid-start-ten-sixths {
+		grid-column-start: 11;
+	}
+
+}
+
+/**
+ * Automatically resizes to accommodate the content and viewport
+ * @link https://smolcss.dev/#smol-css-grid
+ */
+.row-auto-fit {
+	display: grid;
+	gap: var(--space-m);
+	grid-template-columns: repeat(auto-fit, minmax(min(var(--min-column-size, 15ch), 100%), 1fr));
+}
+
+
+/**
+ * Classes for adjusting the gap size
+ * Placed outside the media query so they can also be used by .row-auto-fit
+ */
+
+.row-gap-medium {
+	gap: var(--space-m);
+}
+
+.row-gap-large {
+	gap: var(--space-l);
+}
+
+.row-gap-xlarge {
+	gap: var(--space-xl);
+}
+
+.row-gap-xxlarge {
+	gap: var(--space-xxl);
+}
+
+.row-gap-xxxlarge {
+	gap: var(--space-xxxl);
+}
+
+.row-no-gap {
+	gap: 0;
+}

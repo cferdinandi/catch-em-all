@@ -1,0 +1,25 @@
+.placeholder {
+	--border-radius: var(--border-radius-s);
+	--margin-bottom: 0;
+	--height: var(--font-size-m);
+	--width: 100%;
+
+	animation: loadingPlaceholders 3s ease-in infinite;
+	background-color: var(--color-neutral-light);
+	border-radius: var(--border-radius);
+	margin-bottom: var(--margin-bottom);
+	height: var(--height);
+	width: var(--width);
+}
+
+@keyframes loadingPlaceholders {
+	0% {
+		background-color: var(--color-neutral-lighter);
+	}
+	50% {
+		background-color: var(--color-neutral-light);
+	}
+	100% {
+		background-color: var(--color-neutral-lighter);
+	}
+}

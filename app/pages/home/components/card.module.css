@@ -1,0 +1,37 @@
+.card {
+	display: inline-block;
+	border: 1px solid var(--color-neutral-light);
+	border-radius: var(--border-radius-m);
+	text-align: center;
+	transition: font-weight 300ms ease-in-out;
+}
+
+.card:hover {
+	background-color: var(--color-neutral-lighter);
+	font-weight: 500;
+}
+
+.card img {
+	transition: transform 300ms ease-in-out;
+}
+
+.card:hover img {
+	transform: scale(1.1);
+}
+
+/* Remove scale transform for people who want less motion */
+@media (prefers-reduced-motion: reduce) {
+	.card:hover img {
+		transform: none;
+	}
+}
+
+.card-link {
+	display: block;
+	width: 100%;
+	padding: var(--space-m);
+}
+
+.card-link:hover {
+	--decoration: none;
+}
