@@ -3,6 +3,13 @@
 **The tl;dr:** this app relies heavily on E2E testing, which I believe provides better information and more confidence with less effort than aggressively testing every UI component individually in isolation.
 
 
+## Quick Start
+
+- `npm run test:e2e` - run End-to-End tests
+- `npm run test:unit` - run unit tests
+- `npm run test:all` - run all tests
+
+
 ## Tool Choice
 
 The app uses [Playwright](https://playwright.dev) for testing.
