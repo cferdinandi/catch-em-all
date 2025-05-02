@@ -7,6 +7,11 @@ This is a web app that displays information about various Pokèmon, powered by R
 
 - Add tests
 - Use test IDs for Playwright test - https://playwright.dev/docs/locators#locate-by-test-id
+- Add button share component to E2E tests
+- Add abilities to single page tests
+- Move homepage cards and spinners into their own directories
+- Check for focus shift on e2e testing
+- Add check that APIs are saving to cache to e2e tests
 
 
 

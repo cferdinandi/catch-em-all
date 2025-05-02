@@ -32,3 +32,10 @@ Rather than one concatenated global CSS file, the app loads a handful of smaller
 The makes maintenance a lot easier, and [from my own testing](https://gomakethings.com/modular-css-and-different-ways-to-structure-your-stylesheets/), has no meaningful performance impact.
 
 Similarly, files are not minified. With HTTP/2 and server-enabled gzipping, unminified files are nearly as small as their minified counterparts.
+
+
+## HTML
+
+Several components include elements with the `data-testid` attribute.
+
+These are used as [a selector for more accurate testing](https://playwright.dev/docs/locators#locate-by-test-id). They should not be removed, nor should they be used for styling.
