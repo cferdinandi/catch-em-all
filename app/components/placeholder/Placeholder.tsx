@@ -9,6 +9,9 @@ export function Placeholder ({ ...props }) {
 	return (
 		<div
 			className={styles.placeholder}
+			// For e2e testing
+			// https://playwright.dev/docs/locators#locate-by-test-id
+			data-testid="placeholder"
 			{ ...props }
 		></div>
 	);

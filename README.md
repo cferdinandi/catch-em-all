@@ -6,6 +6,7 @@ This is a web app that displays information about various Pokèmon, powered by R
 ## Todo
 
 - Add tests
+- Use test IDs for Playwright test - https://playwright.dev/docs/locators#locate-by-test-id
 
 
 

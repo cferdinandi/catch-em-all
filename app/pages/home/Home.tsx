@@ -29,7 +29,7 @@ export function Home () {
 			<h1>Catch 'Em All!</h1>
 			<p>Which Pokémon do you want to learn more about today?</p>
 
-			<div className="row row-auto-fit margin-bottom-xlarge">
+			<div className="row-auto-fit margin-bottom-xlarge">
 				{data?.results ? data?.results?.map((pokemon: any) => {
 					const { name, url } = pokemon;
 
@@ -59,7 +59,7 @@ export function Home () {
 				<div className="text-align-center margin-bottom-large">
 					<button
 						className="btn-large"
-						data-is-loading={isPending}
+						data-is-disabled={isPending}
 						onClick={(event) => {
 							event.preventDefault();
 							event.stopPropagation();
