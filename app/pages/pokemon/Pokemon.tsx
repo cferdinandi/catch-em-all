@@ -25,7 +25,10 @@ export function Pokemon () {
 	 * This helps ensure that they're styled as close to the current real HTML as possible
 	 */
 	return (
-		<main className="container container-medium">
+		<main
+			key={name}
+			className="container container-medium"
+		>
 			<h1>{nameAsTitle}</h1>
 			<div className="row row-gap-xxxlarge">
 				<div className="grid-third">
