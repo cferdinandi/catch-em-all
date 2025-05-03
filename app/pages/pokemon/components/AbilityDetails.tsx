@@ -21,13 +21,25 @@ export function AbilityDetails ({
 	// Get the first English language entry about the ability
 	const effectDetails = data?.effect_entries ? getEnglishEntry(data?.effect_entries) : null;
 
+	// Styles for the placeholder content
+	const placeHolderStyles = {
+		term: {
+			'--width': '9ch',
+			'--margin-bottom': 'var(--space-xs)',
+		},
+		definition: {
+			'--margin-bottom': 'var(--space-xs)',
+		},
+	};
+
 	// Display placeholders while waiting for API data
 	if (isPending) {
 		return (
-			<>
-				<Placeholder />
-				<Placeholder style={{'--height': '10rem'}} />
-			</>
+			<div className="margin-bottom-xxlarge">
+				<Placeholder style={placeHolderStyles.term} />
+				<Placeholder style={placeHolderStyles.definition} />
+				<Placeholder style={placeHolderStyles.definition} />
+			</div>
 		);
 	}
 
