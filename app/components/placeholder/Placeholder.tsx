@@ -13,6 +13,6 @@ export function Placeholder ({ ...props }) {
 			// https://playwright.dev/docs/locators#locate-by-test-id
 			data-testid="placeholder"
 			{ ...props }
-		></div>
+		/>
 	);
 }

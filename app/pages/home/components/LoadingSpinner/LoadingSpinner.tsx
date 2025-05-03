@@ -56,6 +56,7 @@ export function LoadingSpinner ({
 			</div>
 			<div
 				className={styles.message}
+				// biome-ignore lint/a11y/useSemanticElements: better screen reader support
 				role="status"
 			>{label}</div>
 		</div>
