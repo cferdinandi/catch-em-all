@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/experimental-ct-react';
-import { LoadingSpinner } from '~/pages/home/components/LoadingSpinner';
+import { LoadingSpinner } from '~/pages/home/components/LoadingSpinner/LoadingSpinner';
 
 test.describe('<LoadingSpinner>', () => {
 

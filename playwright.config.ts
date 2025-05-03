@@ -28,7 +28,13 @@ export default defineConfig({
 	workers: process.env.CI ? 1 : undefined,
 
 	// Reporter to use. See https://playwright.dev/docs/test-reporters
-	reporter: 'html',
+	reporter: [
+		['list'],
+		[
+			'html',
+			{ outputFolder: 'playwright-report_e2e' }
+		]
+	],
 
 	// Run your local dev server before starting the tests
 	webServer: {

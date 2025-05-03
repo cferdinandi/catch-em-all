@@ -7,12 +7,12 @@
 		"dev": "react-router dev",
 		"start": "react-router-serve ./build/server/index.js",
 		"test:types": "react-router typegen && tsc",
-		"test:e2e": "npx playwright test tests/e2e",
-		"test:unit": "npx playwright test tests/unit -c playwright-ct.config.ts",
 		"test:lint": "npx @biomejs/biome lint",
+		"test:unit": "npx playwright test tests/unit -c playwright-ct.config.ts",
+		"test:e2e": "npx playwright test tests/e2e",
 		"test:lint-fix": "npx @biomejs/biome lint --write",
-		"test:all": "npm run test:e2e && npm run test:unit && npm run test:lint",
-		"test:all-fix": "npm run test:e2e && npm run test:unit && npm run test:lint-fix"
+		"test:all": "npm run test:types && npm run test:lint && npm run test:unit && npm run test:e2e",
+		"test:all-fix": "npm run test:types && npm run test:lint-fix && npm run test:unit && npm run test:e2e"
 	},
 	"dependencies": {
 		"@react-router/node": "^7.5.3",
