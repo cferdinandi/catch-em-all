@@ -51,6 +51,7 @@ export function ButtonCopy ({ name }: { name: string; }) {
 			</button>
 			<div
 				className="visually-hidden"
+				// biome-ignore lint/a11y/useSemanticElements: better screen reader support
 				role="status"
 			>{a11yLabel}</div>
 		</span>

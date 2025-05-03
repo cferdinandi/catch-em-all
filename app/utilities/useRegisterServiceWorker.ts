@@ -17,12 +17,12 @@ export function useRegisterServiceWorker () {
 	useEffect(() => {
 
 		// Initialize the service worker
-		if (navigator && navigator.serviceWorker) {
+		if (navigator?.serviceWorker) {
 			navigator.serviceWorker.register(serviceWorker);
 		}
 
 		// Cleanup old cache on page load
-		if (navigator.serviceWorker.controller) {
+		if (navigator?.serviceWorker?.controller) {
 			navigator.serviceWorker.controller?.postMessage('sw-clean-up');
 		}
 
