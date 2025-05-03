@@ -9,6 +9,7 @@ import { useLocation } from 'react-router';
 export function useFocusOnLocationChange () {
 	const location = useLocation();
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: location required to trigger behavior on route changes
 	useEffect(() => {
 		const h1 = document.querySelector('h1');
 		const tabIndex = h1?.getAttribute('tabindex');

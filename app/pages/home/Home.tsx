@@ -14,7 +14,7 @@ export function Home () {
 	let statusMessage = '';
 
 	// DO display a status message when loading more Pokemon
-	if (!!data?.previous) {
+	if (data?.previous) {
 		if (isPending) {
 			statusMessage = 'Catching more Pokémon...';
 		} else if (hasError) {
@@ -60,9 +60,8 @@ export function Home () {
 					<button
 						className="btn-large"
 						data-is-disabled={isPending}
-						onClick={(event) => {
-							event.preventDefault();
-							event.stopPropagation();
+						type="button"
+						onClick={() => {
 							loadMore();
 						}}
 					>

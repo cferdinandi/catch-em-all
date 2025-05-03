@@ -41,7 +41,7 @@ export function LoadingSpinner ({
 				clearTimeout(timer);
 			}
 		}
-	}, [isLoading]);
+	}, [isLoading, messages.loading, messages.loaded]);
 
 	return (
 		<div data-is-loading={isLoading}>

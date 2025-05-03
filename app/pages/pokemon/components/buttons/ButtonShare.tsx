@@ -48,12 +48,8 @@ export function ButtonShare ({ name }: { name: string; }) {
 		<span data-testid="share">
 			<button
 				className="btn-neutral btn-block btn-small"
-				onClick={(event) => {
-
-					// Not needed but preemptively defensive
-					event.preventDefault();
-					event.stopPropagation();
-
+				type="button"
+				onClick={() => {
 					triggerShare();
 
 				}}

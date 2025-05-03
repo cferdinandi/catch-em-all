@@ -14,6 +14,7 @@ import serviceWorker from '~/../serviceworker.js?url';
 export function useRegisterServiceWorker () {
 	const location = useLocation();
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: location required to trigger behavior on route changes
 	useEffect(() => {
 
 		// Initialize the service worker

@@ -9,15 +9,15 @@ export function usePrefersReducedMotion () {
 	// If true, user prefers reduced motion
 	const [matches, setMatches] = useState(false);
 
-	// Callback function for updating user preference
-	function updateMatches (event: MediaQueryListEvent) {
-		setMatches(event.matches);
-	}
-
 	// On render, sets user preference and listens for changes
 	useEffect(() => {
 		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion)');
 		setMatches(prefersReducedMotion.matches);
+
+		// Callback function for updating user preference
+		function updateMatches (event: MediaQueryListEvent) {
+			setMatches(event.matches);
+		}
 
 		prefersReducedMotion.addEventListener('change', updateMatches);
 

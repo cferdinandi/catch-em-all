@@ -40,9 +40,8 @@ export function ButtonCopy ({ name }: { name: string; }) {
 		<span data-testid="copy">
 			<button
 				className="btn-neutral btn-block btn-small"
-				onClick={(event) => {
-					event.preventDefault();
-					event.stopPropagation();
+				type="button"
+				onClick={() => {
 					copyToClipboard();
 				}}
 				aria-label={`${defaultLabel} link to ${name}`}
