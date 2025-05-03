@@ -28,7 +28,8 @@ export function FlavorText ({ entries }: { entries: Array<PokemonFlavorTest> | u
 	}
 
 	// Get the first English language entry
-	const { flavor_text } = getEnglishEntry(entries);
+	const englishEntry = getEnglishEntry(entries);
+	const flavor_text = englishEntry && 'flavor_text' in englishEntry ? englishEntry?.flavor_text : null;
 	if (!flavor_text) {
 		return null;
 	}

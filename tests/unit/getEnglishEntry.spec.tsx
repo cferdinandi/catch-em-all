@@ -25,7 +25,7 @@ test.describe('getEnglishEntry()', () => {
 
 	test('English entry to be returned', () => {
 		const englishEntry = getEnglishEntry(entries);
-		expect(englishEntry.effect).toBe('When this Pokémon has 1/3 or less of its HP remaining, its grass-type moves inflict 1.5× as much regular damage.');
+		expect(englishEntry?.language.name).toBe('en');
 	});
 
 });

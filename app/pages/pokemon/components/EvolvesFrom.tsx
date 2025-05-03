@@ -5,7 +5,7 @@ import { Link } from 'react-router';
  * Display a link to the Pokemon this one evolves from
  * @param {object} options.evolution The evolution details, if any
  */
-export function EvolvesFrom ({ evolution }: { evolution: NamedAPIResource | null; }) {
+export function EvolvesFrom ({ evolution }: { evolution: NamedAPIResource | undefined; }) {
 
 	if (!evolution || !evolution.name) {
 		return null;

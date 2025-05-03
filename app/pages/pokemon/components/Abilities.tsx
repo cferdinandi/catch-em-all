@@ -7,7 +7,7 @@ import { Placeholder } from '~/components/placeholder/Placeholder';
  * Displays info about the Pokemon's special abilities, if any
  * @param {array} options.abilities The special ability info
  */
-export function Abilities ({ abilities }: { abilities: Array<PokemonAbility> | null; }) {
+export function Abilities ({ abilities }: { abilities: Array<PokemonAbility> | undefined; }) {
 
 	// Styles for the placeholder content
 	const placeHolderStyles = {
@@ -60,12 +60,11 @@ export function Abilities ({ abilities }: { abilities: Array<PokemonAbility> | n
 			<h2 className="h3">Abilities</h2>
 			<dl>
 			{abilities.map((item) => {
-				const { name, url } = item.ability;
+				const { name } = item.ability;
 				return (
 					<AbilityDetails
 						key={name}
 						name={name}
-						url={url}
 					/>
 				);
 			})}

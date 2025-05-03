@@ -10,11 +10,9 @@ import { getEnglishEntry } from '~/utilities/getEnglishEntry';
  * @param {string} options.url  The API endpoint to get details about the ability
  */
 export function AbilityDetails ({
-	name,
-	url,
+	name
 }: {
 	name: string;
-	url: string;
 }) {
 
 	// Get more details about the ability from the API
@@ -33,7 +31,7 @@ export function AbilityDetails ({
 		);
 	}
 
-	if (hasError || !effectDetails || !effectDetails.effect) {
+	if (hasError || !effectDetails || !('effect' in effectDetails)) {
 		return null;
 	}
 

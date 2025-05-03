@@ -1,10 +1,10 @@
-import type { AbilityFlavorText, FlavorText } from 'pokenode-ts';
+import type { AbilityFlavorText, FlavorText, VerboseEffect } from 'pokenode-ts';
 
 /**
  * Get the first English-language entry from an array
  * Used specifically for API responses from the Pokemon API
  */
-export function getEnglishEntry (items: Array<FlavorText | AbilityFlavorText> | null) {
+export function getEnglishEntry (items: Array<FlavorText | AbilityFlavorText | VerboseEffect> | null) {
 	if (!items) {
 		return null;
 	}
