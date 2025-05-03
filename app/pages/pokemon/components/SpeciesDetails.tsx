@@ -1,4 +1,4 @@
-import { useCallAPI } from '~/api/queries';
+import { useGetSpeciesByName } from '~/api/clients';
 
 import { Abilities } from './Abilities';
 import { EvolvesFrom } from './EvolvesFrom';
@@ -6,26 +6,27 @@ import { FlavorText } from './FlavorText';
 import { Habitat } from './Habitat';
 import { PokemonTypes } from './PokemonTypes';
 
+import type { PokemonAbility, PokemonType } from 'pokenode-ts';
+
 /**
  * Displays details about the Pokemon species
- * @TODO Update type details with TS for API responses
- * @param {string} options.url       The API endpoint for getting more info
+ * @param {string} options.name      The species name
  * @param {array}  options.types     The Pokemon type data (ex. plant, water, etc.)
  * @param {array}  options.abilities The Pokemon's special abilities
  */
 export function SpeciesDetails ({
-	url,
+	name,
 	types,
 	abilities,
 }: {
-	url: string;
-	types: Array<any>;
-	abilities: Array<any> | null;
+	name: string | undefined;
+	types: Array<PokemonType> | undefined;
+	abilities: Array<PokemonAbility> | undefined;
 }) {
 
-	const { data, hasError } = useCallAPI(url);
+	const { data, hasError } = useGetSpeciesByName(name);
 
-	if (hasError) {
+	if (hasError || !name) {
 		return null;
 	}
 
