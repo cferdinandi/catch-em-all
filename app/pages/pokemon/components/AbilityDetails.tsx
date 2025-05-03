@@ -13,8 +13,8 @@ export function AbilityDetails ({
 	name,
 	url,
 }: {
-	name: 'string';
-	url: 'string';
+	name: string;
+	url: string;
 }) {
 
 	// Get more details about the ability from the API

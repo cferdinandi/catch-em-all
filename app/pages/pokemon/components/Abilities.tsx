@@ -1,3 +1,4 @@
+import type { PokemonAbility } from 'pokenode-ts';
 import { AbilityDetails } from './AbilityDetails';
 import { Placeholder } from '~/components/placeholder/Placeholder';
 
@@ -6,7 +7,7 @@ import { Placeholder } from '~/components/placeholder/Placeholder';
  * Displays info about the Pokemon's special abilities, if any
  * @param {array} options.abilities The special ability info
  */
-export function Abilities ({ abilities }: { abilities: Array<any> | null; }) {
+export function Abilities ({ abilities }: { abilities: Array<PokemonAbility> | null; }) {
 
 	// Styles for the placeholder content
 	const placeHolderStyles = {

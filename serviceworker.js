@@ -44,8 +44,8 @@ async function trimCache (key, max) {
  */
 function isValid (response) {
 	if (!response) return false;
-	let fetched = response.headers.get('sw-fetched-on');
-	if (fetched && (parseFloat(fetched) + apiCacheDuration) > new Date().getTime()) return true;
+	const fetched = response.headers.get('sw-fetched-on');
+	if (fetched && (Number.parseFloat(fetched) + apiCacheDuration) > new Date().getTime()) return true;
 	return false;
 }
 
@@ -89,11 +89,11 @@ self.addEventListener('fetch', (event) => {
 	if (request.headers.get('Accept').includes('image')) {
 		event.respondWith(
 			caches.match(request).then((response) => {
-				return response || fetch(request).then(function (response) {
+				return response || fetch(request).then((response) => {
 
 					// Save a copy of it in cache
 					const copy = response.clone();
-					event.waitUntil(caches.open(imgID).then(function (cache) {
+					event.waitUntil(caches.open(imgID).then((cache) => {
 						return cache.put(request, copy);
 					}));
 
@@ -122,17 +122,16 @@ self.addEventListener('fetch', (event) => {
 				return fetch(request).then((response) => {
 
 					// Create a copy of the response and save it to the cache
-					let copy = response.clone();
-					event.waitUntil(caches.open(apiID).then((cache) => {
-						let headers = new Headers(copy.headers);
+					const copy = response.clone();
+					event.waitUntil(caches.open(apiID).then(async (cache) => {
+						const headers = new Headers(copy.headers);
 						headers.append('sw-fetched-on', new Date().getTime());
-						return copy.blob().then((body) => {
-							return cache.put(request, new Response(body, {
-								status: copy.status,
-								statusText: copy.statusText,
-								headers: headers
-							}));
-						});
+						const body = await copy.blob();
+                        return await cache.put(request, new Response(body, {
+                            status: copy.status,
+                            statusText: copy.statusText,
+                            headers: headers
+                        }));
 					}));
 
 					// Return the response
@@ -154,5 +153,5 @@ self.addEventListener('message', (event) => {
 	for (const id of cacheIDs) {
 		if (!limits[id]) continue;
 		trimCache(id, limits[id]);
-	};
+	}
 });
