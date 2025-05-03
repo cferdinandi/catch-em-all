@@ -7,14 +7,17 @@
 
 - `npm run test:e2e` - run End-to-End tests
 - `npm run test:unit` - run unit tests
+- `npm run test:lint` - run linting script
+- `npm run test:lint-fix` - run linting script _and_ automatically fix errors
 - `npm run test:all` - run all tests
+- `npm run test:all-fix` - run all tests _and_ automatically fix linting errors
 
-_**Note:** occasionally, one of the tests will fail in one of the test browsers because the API takes too long to respond. Rerunning the affected test usually resolves the issue._
+_**Note:** occasionally, one of the E2E tests will fail in one of the test browsers because the API takes too long to respond. Rerunning the affected test usually resolves the issue._
 
 
-## Tool Choice
+## Playwright
 
-The app uses [Playwright](https://playwright.dev) for testing.
+The app uses [Playwright](https://playwright.dev) for E2E _and_ unit testing.
 
 Playwright has a few major advantages over other popular options...
 
@@ -23,6 +26,15 @@ Playwright has a few major advantages over other popular options...
 - While primarily thought of as an E2E testing tool, it [now supports component testing](https://playwright.dev/docs/test-components), and can even be used to run unit tests. This lets you write your entire suite of tests in one tool.
 
 The most notable downside is that its slower to run than a testing platform like Jest. I believe the benefits outweigh this downside, but that is of course an opinionated position.
+
+
+## Biome
+
+The app uses [Biome](https://biomejs.dev) for linting and code formatting.
+
+In addition to enforcing code standards, it catches a variety of low-hanging-fruit errors that could be missed by other types of testing: missing dependencies with `useEffect()`, accessibility issues, and more.
+
+When paired with an IDE integration, it can also provide live feedback as you code.
 
 
 ## Testing Approach
@@ -40,8 +52,9 @@ There are a few principles that guide how I approached testing with this project
 
 An accessibility test was also conducted on this app. This included...
 
-- Google Lighthouse automated testing
-- E2E with Playwright test to ensure focus is shifted properly on page navigation
+- Google Lighthouse testing for UI-related accessibility issues.
+- E2E with Playwright test to ensure focus is shifted properly on page navigation.
+- Automated testing of common accessibility issues with Biome.
 - Manually checking colors using the [Color Oracle color blindness simulator](https://colororacle.org).
 - Manually navigating the site with a keyboard.
 - Manually testing with a screen reader.
