@@ -18,8 +18,11 @@
 		"@react-router/node": "^7.5.3",
 		"@react-router/serve": "^7.5.3",
 		"@types/lodash-es": "^4.17.12",
+		"axios": "^1.9.0",
+		"axios-cache-interceptor": "^1.8.0",
 		"isbot": "^5.1.17",
 		"lodash-es": "^4.17.21",
+		"pokenode-ts": "^1.20.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
 		"react-router": "^7.5.3"

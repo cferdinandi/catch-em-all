@@ -1,5 +1,4 @@
-import { useCallAPI } from '~/api/queries';
-import { pokemonURL } from '~/api/endpoints';
+import { useGetPokemonByName } from '~/api/clients';
 
 import { PlaceholderCard } from '../PlaceholderCard';
 import { PokemonSprite } from '~/components/PokemonSprite';
@@ -13,8 +12,7 @@ import styles from './card.module.css';
  */
 export function PokemonCard ({ name }: { name: string; }) {
 
-	const url = `${pokemonURL}/${name}`;
-	const { data, hasError } = useCallAPI(url);
+	const { data, hasError } = useGetPokemonByName(name);
 
 	if (hasError) {
 		return null;

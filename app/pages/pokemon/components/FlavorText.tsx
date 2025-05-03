@@ -1,3 +1,4 @@
+import type { FlavorText as PokemonFlavorTest } from 'pokenode-ts';
 import { Placeholder } from '~/components/placeholder/Placeholder';
 import { getEnglishEntry } from '~/utilities/getEnglishEntry';
 
@@ -5,7 +6,7 @@ import { getEnglishEntry } from '~/utilities/getEnglishEntry';
  * Display flavor text about the Pokemon (usually a short bio or fun fact)
  * @param {array} options.entries A selection of flavor text in different languages
  */
-export function FlavorText ({ entries }: { entries: Array<any> | null; }) {
+export function FlavorText ({ entries }: { entries: Array<PokemonFlavorTest> | undefined; }) {
 
 	// Define placeholder content styles
 	const placeHolderStyles = {

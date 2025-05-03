@@ -1,5 +1,5 @@
-import { useCallPaginatedAPI } from '~/api/queries';
-import { pokemonURL } from '~/api/endpoints';
+import { useGetAllPokemon } from '~/api/clients';
+import type { NamedAPIResource } from 'pokenode-ts';
 
 import { PokemonCard } from './components/PokemonCard/PokemonCard';
 import { PlaceHolderGrid } from './components/PlaceholderGrid';
@@ -8,13 +8,13 @@ import { LoadingSpinner } from './components/LoadingSpinner/LoadingSpinner';
 export function Home () {
 
 	// Gets a list of Pokemon from the API, and a function to request more
-	const { data, loadMore, hasMore, isPending, hasError } = useCallPaginatedAPI(pokemonURL);
+	const { data, loadMore, hasMore, isNext, isPending, hasError } = useGetAllPokemon();
 
 	// Don't display a status message on initial load
 	let statusMessage = '';
 
 	// DO display a status message when loading more Pokemon
-	if (data?.previous) {
+	if (isNext) {
 		if (isPending) {
 			statusMessage = 'Catching more Pokémon...';
 		} else if (hasError) {
@@ -30,8 +30,8 @@ export function Home () {
 			<p>Which Pokémon do you want to learn more about today?</p>
 
 			<div className="row-auto-fit margin-bottom-xlarge">
-				{data?.results ? data?.results?.map((pokemon: any) => {
-					const { name, url } = pokemon;
+				{data ? data?.map((pokemon: NamedAPIResource) => {
+					const { name } = pokemon;
 
 					if (!name) {
 						return null;

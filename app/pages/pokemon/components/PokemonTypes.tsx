@@ -1,10 +1,11 @@
+import type { PokemonType } from 'pokenode-ts';
 import { Placeholder } from '~/components/placeholder/Placeholder';
 
 /**
  * Displays the Pokemon's types (eg. plant, water, etc.)
  * @param {array} options.types The type details
  */
-export function PokemonTypes ({ types }: { types: Array<any> | null; }) {
+export function PokemonTypes ({ types }: { types: Array<PokemonType> | undefined; }) {
 
 	// Define styles for the placeholder content
 	const placeHolderStyles = {

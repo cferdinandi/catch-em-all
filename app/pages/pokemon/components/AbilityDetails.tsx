@@ -1,6 +1,6 @@
-import { Placeholder } from '~/components/placeholder/Placeholder';
+import { useGetAbilityByName } from '~/api/clients';
 
-import { useCallAPI } from '~/api/queries';
+import { Placeholder } from '~/components/placeholder/Placeholder';
 import { getEnglishEntry } from '~/utilities/getEnglishEntry';
 
 
@@ -18,7 +18,7 @@ export function AbilityDetails ({
 }) {
 
 	// Get more details about the ability from the API
-	const { data, isPending, hasError } = useCallAPI(url);
+	const { data, isPending, hasError } = useGetAbilityByName(name);
 
 	// Get the first English language entry about the ability
 	const effectDetails = data?.effect_entries ? getEnglishEntry(data?.effect_entries) : null;

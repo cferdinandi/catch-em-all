@@ -1,6 +1,5 @@
-import { useCallAPI } from '~/api/queries';
 import { useParams } from 'react-router';
-import { pokemonURL } from '~/api/endpoints';
+import { useGetPokemonByName } from '~/api/clients';
 
 import { PokemonSprite } from '~/components/PokemonSprite';
 import { SpeciesDetails } from './components/SpeciesDetails';
@@ -13,7 +12,7 @@ import { toTitleCase } from '~/utilities/toTitleCase';
 export function Pokemon () {
 
 	const { name } = useParams();
-	const { data, hasError } = useCallAPI(`${pokemonURL}/${name}`);
+	const { data, hasError } = useGetPokemonByName(name ?? null);
 	const nameAsTitle = toTitleCase(name ?? '');
 
 	if (hasError || !name) {
@@ -46,7 +45,7 @@ export function Pokemon () {
 				</div>
 				<div className="grid-two-thirds">
 					<SpeciesDetails
-						url={data?.species?.url}
+						name={data?.species?.name}
 						types={data?.types}
 						abilities={data?.abilities}
 					/>
