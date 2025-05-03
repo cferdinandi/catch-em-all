@@ -1,10 +1,11 @@
+import type { NamedAPIResource } from 'pokenode-ts';
 import { Link } from 'react-router';
 
 /**
  * Display a link to the Pokemon this one evolves from
  * @param {object} options.evolution The evolution details, if any
  */
-export function EvolvesFrom ({ evolution }: { evolution: any | null; }) {
+export function EvolvesFrom ({ evolution }: { evolution: NamedAPIResource | null; }) {
 
 	if (!evolution || !evolution.name) {
 		return null;

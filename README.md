@@ -6,6 +6,8 @@ This is a web app that displays information about various Pokèmon, powered by R
 ## Todo
 
 - Add API TS type checks
+- Add dark mode?
+- Fix placeholder styling for Abilities
 
 
 

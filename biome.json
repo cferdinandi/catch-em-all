@@ -11,8 +11,7 @@
 				"useArrowFunction": "off"
 			},
 			"suspicious": {
-				"noArrayIndexKey": "off",
-				"noExplicitAny": "off"
+				"noArrayIndexKey": "off"
 			},
 			"recommended": true
 		}
@@ -26,6 +25,6 @@
 		}
 	},
 	"files": {
-		"include": ["./app/*"]
+		"include": ["./app/*", "./serviceworker.js"]
 	}
 }
