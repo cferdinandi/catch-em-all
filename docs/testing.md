@@ -27,6 +27,8 @@ Playwright has a few major advantages over other popular options...
 
 The most notable downside is that its slower to run than a testing platform like Jest. I believe the benefits outweigh this downside, but that is of course an opinionated position.
 
+_**I got to experience the benefits of this approach first hand while working on this project.** I originally [wrote my own API integration with fetch](https://github.com/cferdinandi/catch-em-all/tree/a5053a8204dfce47235f1a87cc51be379d80e8cd/app/api), but later switched to an SDK. Because I wasn't testing implementation details, I didn't have to rewrite my tests, and had confidence that the refactor didn't break anything._
+
 
 ## Biome
 
