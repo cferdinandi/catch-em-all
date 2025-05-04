@@ -34,13 +34,12 @@ export function Pokemon () {
 					<div className="text-align-center">
 						<PokemonSprite sprites={data?.sprites} />
 					</div>
-					<div className="row margin-bottom-xxlarge">
-						<div className="grid-half">
-							<ButtonShare name={nameAsTitle} />
-						</div>
-						<div className="grid-half">
-							<ButtonCopy name={nameAsTitle} />
-						</div>
+					<div
+						className="row-auto-fit row-gap-small margin-bottom-xxlarge"
+						style={{'--min-column-size': '8ch'} as React.CSSProperties}
+					>
+						<ButtonShare name={nameAsTitle} />
+						<ButtonCopy name={nameAsTitle} />
 					</div>
 				</div>
 				<div className="grid-two-thirds">

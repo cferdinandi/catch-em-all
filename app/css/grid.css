@@ -94,6 +94,10 @@
  * Placed outside the media query so they can also be used by .row-auto-fit
  */
 
+.row-gap-small {
+	gap: var(--space-s);
+}
+
 .row-gap-medium {
 	gap: var(--space-m);
 }
