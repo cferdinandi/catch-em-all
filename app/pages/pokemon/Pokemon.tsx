@@ -9,6 +9,9 @@ import { Page404 } from '../404/Page404';
 
 import { toTitleCase } from '~/utilities/toTitleCase';
 
+// Outside of component for better performance
+const rowStyle = {'--min-column-size': '8ch'} as React.CSSProperties;
+
 export function Pokemon () {
 
 	const { name } = useParams();
@@ -37,7 +40,7 @@ export function Pokemon () {
 					{/* Automated column layout to account for some browsers not supporting the Share API */}
 					<div
 						className="row-auto-fit row-gap-small margin-bottom-xxlarge"
-						style={{'--min-column-size': '8ch'} as React.CSSProperties}
+						style={rowStyle}
 					>
 						<ButtonShare name={nameAsTitle} />
 						<ButtonCopy name={nameAsTitle} />

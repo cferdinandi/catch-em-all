@@ -2,16 +2,17 @@ import type { FlavorText as PokemonFlavorTest } from 'pokenode-ts';
 import { Placeholder } from '~/components/placeholder/Placeholder';
 import { getEnglishEntry } from '~/utilities/getEnglishEntry';
 
+// Define placeholder content styles
+// Outside of component for better performance
+const placeHolderStyles = {
+	'--margin-bottom': 'var(--space-xs)',
+};
+
 /**
  * Display flavor text about the Pokemon (usually a short bio or fun fact)
  * @param {array} options.entries A selection of flavor text in different languages
  */
 export function FlavorText ({ entries }: { entries: Array<PokemonFlavorTest> | undefined; }) {
-
-	// Define placeholder content styles
-	const placeHolderStyles = {
-		'--margin-bottom': 'var(--space-xs)',
-	};
 
 	// Display placeholders while waiting for API data
 	if (!entries) {

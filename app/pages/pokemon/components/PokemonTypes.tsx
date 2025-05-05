@@ -1,22 +1,23 @@
 import type { PokemonType } from 'pokenode-ts';
 import { Placeholder } from '~/components/placeholder/Placeholder';
 
+// Define styles for the placeholder content
+// Outside of component for performance reasons
+const placeHolderStyles = {
+	heading: {
+		'--height': 'var(--font-size-l)',
+		'--margin-bottom': 'var(--space-m)',
+	},
+	types: {
+		'--width': '7ch',
+	},
+};
+
 /**
  * Displays the Pokemon's types (eg. plant, water, etc.)
  * @param {array} options.types The type details
  */
 export function PokemonTypes ({ types }: { types: Array<PokemonType> | undefined; }) {
-
-	// Define styles for the placeholder content
-	const placeHolderStyles = {
-		heading: {
-			'--height': 'var(--font-size-l)',
-			'--margin-bottom': 'var(--space-m)',
-		},
-		types: {
-			'--width': '7ch',
-		},
-	};
 
 	// Display placeholders while waiting for API data
 	if (!types) {

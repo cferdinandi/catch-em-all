@@ -3,27 +3,28 @@ import { AbilityDetails } from './AbilityDetails';
 import { Placeholder } from '~/components/placeholder/Placeholder';
 
 
+// Styles for the placeholder content
+// Outside of component for better performance
+const placeHolderStyles = {
+	heading: {
+		'--height': 'var(--font-size-l)',
+		'--width': '12ch',
+		'--margin-bottom': 'var(--space-m)',
+	},
+	term: {
+		'--width': '9ch',
+		'--margin-bottom': 'var(--space-xs)',
+	},
+	definition: {
+		'--margin-bottom': 'var(--space-xs)',
+	},
+};
+
 /**
  * Displays info about the Pokemon's special abilities, if any
  * @param {array} options.abilities The special ability info
  */
 export function Abilities ({ abilities }: { abilities: Array<PokemonAbility> | undefined; }) {
-
-	// Styles for the placeholder content
-	const placeHolderStyles = {
-		heading: {
-			'--height': 'var(--font-size-l)',
-			'--width': '12ch',
-			'--margin-bottom': 'var(--space-m)',
-		},
-		term: {
-			'--width': '9ch',
-			'--margin-bottom': 'var(--space-xs)',
-		},
-		definition: {
-			'--margin-bottom': 'var(--space-xs)',
-		},
-	};
 
 	// Display a placeholder while waiting for API data
 	if (!abilities) {

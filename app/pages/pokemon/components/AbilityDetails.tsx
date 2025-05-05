@@ -3,6 +3,17 @@ import { useGetAbilityByName } from '~/api/clients';
 import { Placeholder } from '~/components/placeholder/Placeholder';
 import { getEnglishEntry } from '~/utilities/getEnglishEntry';
 
+// Styles for the placeholder content
+// Outside of component for better performance
+const placeHolderStyles = {
+	term: {
+		'--width': '9ch',
+		'--margin-bottom': 'var(--space-xs)',
+	},
+	definition: {
+		'--margin-bottom': 'var(--space-xs)',
+	},
+};
 
 /**
  * Display the details for a Pokemon ability
@@ -20,17 +31,6 @@ export function AbilityDetails ({
 
 	// Get the first English language entry about the ability
 	const effectDetails = data?.effect_entries ? getEnglishEntry(data?.effect_entries) : null;
-
-	// Styles for the placeholder content
-	const placeHolderStyles = {
-		term: {
-			'--width': '9ch',
-			'--margin-bottom': 'var(--space-xs)',
-		},
-		definition: {
-			'--margin-bottom': 'var(--space-xs)',
-		},
-	};
 
 	// Display placeholders while waiting for API data
 	if (isPending) {

@@ -2,22 +2,23 @@ import type { NamedAPIResource } from 'pokenode-ts';
 import { Placeholder } from '~/components/placeholder/Placeholder';
 import { dashToSpace } from '~/utilities/dashToSpace';
 
+// Define styles for placeholder content
+// Outside of component for better performance
+const placeHolderStyles = {
+	heading: {
+		'--height': 'var(--font-size-l)',
+		'--margin-bottom': 'var(--space-m)',
+	},
+	habitat: {
+		'--width': '10ch',
+	},
+};
+
 /**
  * Display Pokemon habitat details
  * @param {object} options.habitat Info about the Pokemon's habitat
  */
 export function Habitat ({ habitat }: { habitat: NamedAPIResource | null | undefined; }) {
-
-	// Define styles for placeholder content
-	const placeHolderStyles = {
-		heading: {
-			'--height': 'var(--font-size-l)',
-			'--margin-bottom': 'var(--space-m)',
-		},
-		habitat: {
-			'--width': '10ch',
-		},
-	};
 
 	// Display placeholders while waiting for API data
 	if (habitat === undefined) {
