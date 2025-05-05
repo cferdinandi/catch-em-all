@@ -51,6 +51,22 @@ Importing global styles as CSS modules would have also been a valid approach. Bu
 Keeping shared styles as global, external files means every CSS module automatically has access to all CSS variables, and makes creating and maintaining a cohesive design system a lot easier.
 
 
+## No `default` exports
+
+This project includes zero `default` exports, including files that have only one `export` in them.
+
+I find that as projects grow, it becomes harder to know when a variable, function, or component is imported with or without object destructuring. Avoiding `default` exports removes that mental overhead.
+
+Everything is imported as an object property, and you never have to think about which approach to use.
+
+
+## One component per file
+
+For this project, child components are located in separate, imported files.
+
+Keeping them in the same file is also a valid approach, but I find that it can sometimes result in very large files that require a lot of scrolling. This is absolutely an opinionated position, but I prefer having separate, smaller files for code maintenance purposes.
+
+
 ## Testing Tools
 
 This project uses [Playwright](https://playwright.dev) for both end-to-end _and_ unit tests.
