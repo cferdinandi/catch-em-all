@@ -5,13 +5,9 @@ The [PokeAPI](https://pokeapi.co) used for this project requires numerous API ca
 
 ## API Cache in Memory
 
-To reduce the impact of these many API calls, the app uses two custom hooks for querying the API: `useCallAPI()` and `useCallPaginatedAPI()`.
+To reduce the impact of these many API calls, the app a library that automatically caches API responses in memory.
 
-These hooks implement an internal cache in browser memory so that once an endpoint is called, its data can be loaded from cache on subsequent calls instead of another HTTP request.
-
-Under-the-hood, the system uses `fetch()` requests and a private object with public helper methods.
-
-While there are third-party libraries that do similar things, having tighter control over the request and response structure with less overhead was an appealing choice.
+The homepage features a "Load More" button. A custom react hook combines paginated responses into one array that persists across route changes, avoiding needless reloads.
 
 
 ## Service Worker

@@ -2,10 +2,14 @@
 
 This is a web app that displays information about various Pokèmon, powered by React, React Router, and the [PokèAPI](https://pokeapi.co).
 
+**Features**
 
-## Todo
-
-- Add dark mode?
+- API caching (browser memory _and_ a service worker) for performance.
+- Automated dark mode tied to OS/system settings.
+- Share and copy buttons for each Pokemon.
+- Pulsing placeholders while API data is loading.
+- Linting, unit testing, and E2E testing.
+- Custom React hook for managing focus on route changes (an accessibility requirement).
 
 
 
