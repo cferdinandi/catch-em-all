@@ -34,6 +34,7 @@ export function Pokemon () {
 					<div className="text-align-center">
 						<PokemonSprite sprites={data?.sprites} />
 					</div>
+					{/* Automated column layout to account for some browsers not supporting the Share API */}
 					<div
 						className="row-auto-fit row-gap-small margin-bottom-xxlarge"
 						style={{'--min-column-size': '8ch'} as React.CSSProperties}
