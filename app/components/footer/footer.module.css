@@ -1,7 +1,14 @@
 .wrapper {
-	background-color: var(--color-neutral-lightest);
+	--background-color: var(--color-neutral-lightest);
+	background-color: var(--background-color);
 	margin-top: var(--space-xl);
 	padding: var(--space-m) 0;
+}
+
+@media (prefers-color-scheme: dark) {
+	.wrapper {
+		--background-color: var(--color-gray-20);
+	}
 }
 
 .nav {
@@ -16,6 +23,16 @@
 
 .nav a:hover {
 	--color: var(--color-blue-30);
+}
+
+@media (prefers-color-scheme: dark) {
+	.nav a {
+		--color: var(--color-blue-80);
+	}
+
+	.nav a:hover {
+		--color: var(--color-blue-90);
+	}
 }
 
 .link {

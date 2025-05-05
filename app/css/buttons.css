@@ -54,21 +54,39 @@ a.btn {
 
 
 /**
+ * Secondary buttons
+ */
+.btn-secondary {
+	--background-color: var(--color-secondary);
+	--border-color: var(--color-secondary);
+}
+
+.btn-secondary:hover {
+	--background-color: var(--color-secondary-hover);
+	--border-color: var(--color-secondary-hover);
+}
+
+.btn-secondary:active {
+	--background-color: var(--color-secondary-active);
+	--border-color: var(--color-secondary-active);
+}
+
+
+/**
  * Neutral buttons
  */
 .btn-neutral {
 	--background-color: var(--color-neutral-lighter);
 	--border-color: var(--color-neutral-lighter);
-	--color: var(--color-neutral-10);
+	--color: var(--color-text);
 }
 
 .btn-neutral:hover {
 	--background-color: var(--color-neutral-hover);
 	--border-color: var(--color-neutral-hover);
-	--color: var(--color-neutral-10);
+	--color: var(--color-text);
 }
 
-.btn-neutral[aria-pressed="true"],
 .btn-neutral:active {
 	--background-color: var(--color-neutral-active);
 	--border-color: var(--color-neutral-active);

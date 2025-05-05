@@ -78,3 +78,24 @@
 	--border-radius-l: 1.3125rem;
 
 }
+
+
+/* Dark mode based on system preferences */
+@media (prefers-color-scheme: dark) {
+	:root {
+
+		--color-background: var(--color-gray-10);
+		--color-text: var(--color-white);
+		--color-link: var(--color-blue-80);
+		--color-link-hover: var(--color-blue-70);
+
+		--color-neutral: var(--color-gray-40);
+		--color-neutral-dark: var(--color-gray-20);
+		--color-neutral-light: var(--color-gray-30);
+		--color-neutral-lighter: var(--color-gray-20);
+		--color-neutral-lightest: var(--color-gray-10);
+		--color-neutral-hover: var(--color-gray-30);
+		--color-neutral-active: var(--color-gray-30);
+
+	}
+}
