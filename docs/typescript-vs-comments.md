@@ -12,5 +12,3 @@ Where appropriate, [JSDoc](https://jsdoc.app) is used. The CSS uses a style [rou
 ## API Type Definitions
 
 API type definitions were provided by [Pokenode-TS](https://pokenode-ts.vercel.app).
-
-While they also provide an API library, it was not used for this project.
