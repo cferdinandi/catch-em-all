@@ -36,4 +36,5 @@ This is a web app that displays information about various Pokèmon, powered by R
 5. [Accessibility](./docs/accessibility.md)
 6. [Testing](./docs/testing.md)
 7. [Architecture Decisions](./docs/decisions.md)
+8. [Feature Wishlist](./docs/wishlist.md)
 8. [Credits](./docs/credits.md)
