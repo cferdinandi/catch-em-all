@@ -6,13 +6,6 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"complexity": {
-				"noForEach": "off",
-				"useArrowFunction": "off"
-			},
-			"suspicious": {
-				"noArrayIndexKey": "off"
-			},
 			"recommended": true
 		}
 	},

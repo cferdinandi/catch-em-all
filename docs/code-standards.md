@@ -39,3 +39,20 @@ Similarly, files are not minified. With HTTP/2 and server-enabled gzipping, unmi
 Several components include elements with the `data-testid` attribute.
 
 These are used as [a selector for more accurate testing](https://playwright.dev/docs/locators#locate-by-test-id). They should not be removed, nor should they be used for styling.
+
+This project favors calling APIs in the first child components where they API data is used, rather than in a parent component.
+
+```tsx
+// Do this...
+function Abilities () {
+	const { data } = useAbilities('bulbasaur');
+	// ...
+}
+
+// Do NOT do this...
+function Pokemon () {
+	const { data } = useAbilities('bulbasaur');
+
+	return <Abilities abilityData={data} />
+}
+```
