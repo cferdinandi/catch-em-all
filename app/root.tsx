@@ -94,6 +94,12 @@ export function ErrorBoundary ({ error }: Route.ErrorBoundaryProps) {
 		console.warn('Route Error:', error.message, error.stack);
 	}
 
-	return <Page404 />;
+	return (
+		<>
+			<Nav />
+			<Page404 />
+			<Footer />
+		</>
+	);
 
 }

@@ -18,15 +18,17 @@ export function SpeciesDetails ({
 	name,
 	types,
 	abilities,
+	isPokemonPending,
 }: {
 	name: string | undefined;
 	types: Array<PokemonType> | undefined;
 	abilities: Array<PokemonAbility> | undefined;
+	isPokemonPending: boolean;
 }) {
 
-	const { data, hasError } = useGetSpeciesByName(name);
+	const { data, isPending } = useGetSpeciesByName(name);
 
-	if (hasError || !name) {
+	if (!name && !isPokemonPending) {
 		return null;
 	}
 

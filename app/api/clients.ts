@@ -86,16 +86,17 @@ export function useGetPokemonByName (id: string | null | undefined) {
 	const [hasError, setHasError] = useState(false);
 
 	// If the id changes, flush state
-	// biome-ignore lint/correctness/useExhaustiveDependencies: a change in ID is what triggers the effect
 	useEffect(() => {
 		setData(null);
+		setIsPending(false);
+		if (!id) return;
 		callAPI();
 	}, [id]);
 
 	async function callAPI () {
 
 		// If an API call is already in progress, do not call it again until resolved
-		if (isPending || !id) {
+		if (isPending || hasError || !id) {
 			return;
 		}
 
@@ -143,16 +144,17 @@ export function useGetAbilityByName (id: string | null | undefined) {
 	const [hasError, setHasError] = useState(false);
 
 	// If the id changes, flush state
-	// biome-ignore lint/correctness/useExhaustiveDependencies: a change in ID is what triggers the effect
 	useEffect(() => {
 		setData(null);
+		setIsPending(false);
+		if (!id) return;
 		callAPI();
 	}, [id]);
 
 	async function callAPI () {
 
 		// If an API call is already in progress, do not call it again until resolved
-		if (isPending || !id) {
+		if (isPending || hasError || !id) {
 			return;
 		}
 
@@ -200,16 +202,17 @@ export function useGetSpeciesByName (id: string | null | undefined) {
 	const [hasError, setHasError] = useState(false);
 
 	// If the id changes, flush state
-	// biome-ignore lint/correctness/useExhaustiveDependencies: a change in ID is what triggers the effect
 	useEffect(() => {
 		setData(null);
+		setIsPending(false);
+		if (!id) return;
 		callAPI();
 	}, [id]);
 
 	async function callAPI () {
 
 		// If an API call is already in progress, do not call it again until resolved
-		if (isPending || !id) {
+		if (isPending || hasError || !id) {
 			return;
 		}
 

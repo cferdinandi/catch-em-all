@@ -1,7 +1,8 @@
 import { useParams } from 'react-router';
 import { useGetPokemonByName } from '~/api/clients';
 
-import { PokemonSprite } from '~/components/PokemonSprite';
+import { PokemonSprite } from '~/components/sprite/PokemonSprite';
+import { PokemonSpritePlaceholder } from '~/components/sprite/PokemonSpritePlaceholder';
 import { SpeciesDetails } from './components/SpeciesDetails';
 import { ButtonCopy } from './components/buttons/ButtonCopy';
 import { ButtonShare } from './components/buttons/ButtonShare';
@@ -15,7 +16,7 @@ const rowStyle = {'--min-column-size': '8ch'} as React.CSSProperties;
 export function Pokemon () {
 
 	const { name } = useParams();
-	const { data, hasError } = useGetPokemonByName(name ?? null);
+	const { data, isPending, hasError } = useGetPokemonByName(name ?? null);
 	const nameAsTitle = toTitleCase(name ?? '');
 
 	if (hasError || !name) {
@@ -35,15 +36,16 @@ export function Pokemon () {
 			<div className="row row-gap-xxxlarge">
 				<div className="grid-third">
 					<div className="text-align-center">
-						<PokemonSprite sprites={data?.sprites} />
+						{ isPending ? <PokemonSpritePlaceholder /> : <PokemonSprite sprites={data?.sprites} /> }
 					</div>
 					{/* Automated column layout to account for some browsers not supporting the Share API */}
 					<div
 						className="row-auto-fit row-gap-small margin-bottom-xxlarge"
 						style={rowStyle}
 					>
-						<ButtonShare name={nameAsTitle} />
-						<ButtonCopy name={nameAsTitle} />
+						{/* Wait until data has loaded to show buttons, in case there's an error with the API */}
+						{ isPending ? null : <ButtonShare name={nameAsTitle} /> }
+						{ isPending ? null : <ButtonCopy name={nameAsTitle} /> }
 					</div>
 				</div>
 				<div className="grid-two-thirds">
@@ -51,6 +53,7 @@ export function Pokemon () {
 						name={data?.species?.name}
 						types={data?.types}
 						abilities={data?.abilities}
+						isPokemonPending={isPending}
 					/>
 				</div>
 			</div>

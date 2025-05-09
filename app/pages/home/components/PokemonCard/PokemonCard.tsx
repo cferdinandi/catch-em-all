@@ -1,7 +1,7 @@
 import { useGetPokemonByName } from '~/api/clients';
 
 import { PlaceholderCard } from '../PlaceholderCard';
-import { PokemonSprite } from '~/components/PokemonSprite';
+import { PokemonSprite } from '~/components/sprite/PokemonSprite';
 import { Link } from 'react-router';
 
 import styles from './card.module.css';

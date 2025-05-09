@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('app accessiblity', () => {
+test.describe('app accessibility', () => {
 
 	test('focus shifts on navigation', async ({ page }) => {
 
